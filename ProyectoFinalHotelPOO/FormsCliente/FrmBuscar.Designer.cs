@@ -153,7 +153,7 @@
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(175, 57);
             this.BtnBuscar.TabIndex = 6;
-            this.BtnBuscar.Text = "Reservar";
+            this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
             // 
             // lblNombreSistema

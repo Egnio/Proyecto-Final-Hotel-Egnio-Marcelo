@@ -49,7 +49,138 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             BtnCancelar.Enabled = false;
             BtnNuevaReservacion.Enabled = true;
 
-            
+            //Se declaran las variables para calcular el total del hotel
+            double habitaciones = 0, tdias = 0, adultos = 0, niños = 0, total = 0;
+
+
+            //Se asignan valores a las variables
+            habitaciones = double.Parse(cmbHabitaciones.Text);
+            adultos = double.Parse(cmbAdultos.Text);
+            niños = double.Parse(cmbNiños.Text);
+
+            //Se convierte el tiempo de data time picker a una variable utilizable
+            DateTime entrada = dtpEntrada.Value;
+            DateTime salida = dtpSalida.Value;
+            TimeSpan dias = salida.Subtract(entrada);
+            dias.Days.ToString();
+            tdias = dias.Days;
+
+
+            //Se calcula el total del hotel
+            if (cmbHoteles.Text == "Hotel RDG")
+            {
+                if (cmbTpoHabitación.Text == "Individual")
+                {
+                    total = ((60 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Doble")
+                {
+                    total = ((80 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Matrimonial")
+                {
+                    total = ((90 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
+                }
+                else
+                {
+                    total = ((100 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
+                }
+            }
+            else if (cmbHoteles.Text == "Hotel Nicte")
+            {
+                if (cmbTpoHabitación.Text == "Individual")
+                {
+                    total = ((70 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Doble")
+                {
+                    total = ((90 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Matrimonial")
+                {
+                    total = ((100 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
+                }
+                else
+                {
+                    total = ((120 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
+                }
+            }
+            else if (cmbHoteles.Text == "Hotel Holiday Inn Convention Center")
+            {
+                if (cmbTpoHabitación.Text == "Individual")
+                {
+                    total = ((100 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Doble")
+                {
+                    total = ((120 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Matrimonial")
+                {
+                    total = ((130 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
+                }
+                else
+                {
+                    total = ((150 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
+                }
+            }
+            else if (cmbHoteles.Text == "Hotel Globales Camino Real Managua")
+            {
+                if (cmbTpoHabitación.Text == "Individual")
+                {
+                    total = ((110 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Doble")
+                {
+                    total = ((130 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Matrimonial")
+                {
+                    total = ((140 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
+                }
+                else
+                {
+                    total = ((160 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
+                }
+            }
+            else
+            {
+                if (cmbTpoHabitación.Text == "Individual")
+                {
+                    total = ((240 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Doble")
+                {
+                    total = ((260 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
+                }
+                else if (cmbTpoHabitación.Text == "Matrimonial")
+                {
+                    total = ((270 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
+                }
+                else
+                {
+                    total = ((290 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
+                }
+            }
+
+            //Se muestran los resultados
+            txtTotal.Text = "$" + total;
+
+            //Se bloquea la casilla del total
+            txtTotal.ReadOnly = true;
+
+            //Se guardan los datos ingresados por el usuario
+            txtCodigoDeCliente.Text = dgvClientes.Rows.Count.ToString();
+            if (sql.insertar(txtCodigoDeCliente.Text, txtNombre.Text, txtApellidos.Text, txtNúmeroTelefónico.Text, txtCorreoElectrónico.Text, txtDirección.Text, cmbHoteles.Text, cmbHabitaciones.Text, cmbTpoHabitación.Text, cmbAdultos.Text, cmbNiños.Text, dtpEntrada.Text, dtpSalida.Text, txtTotal.Text))
+            {
+                MessageBox.Show("¡La reserva se ha completado con éxito!");
+                dgvClientes.DataSource = sql.mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Error al registrar reserva, intente de nuevo.");
+            }
+        }
 
     }
 
@@ -384,6 +515,13 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         }
 
         private void BtnHistorial_Click(object sender, EventArgs e)
+        {
+            FrmBuscar frm = new FrmBuscar();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
