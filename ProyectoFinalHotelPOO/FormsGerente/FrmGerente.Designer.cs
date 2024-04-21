@@ -285,6 +285,7 @@
             this.cmbHoteles.Name = "cmbHoteles";
             this.cmbHoteles.Size = new System.Drawing.Size(312, 23);
             this.cmbHoteles.TabIndex = 28;
+            this.cmbHoteles.SelectedIndexChanged += new System.EventHandler(this.cmbHoteles_SelectedIndexChanged);
             this.cmbHoteles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbHoteles_KeyPress);
             // 
             // lblHotel
@@ -515,6 +516,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(137, 21);
             this.txtApellidos.TabIndex = 3;
+            this.txtApellidos.TextChanged += new System.EventHandler(this.txtApellidos_TextChanged);
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // lblNúmeroTelefónico

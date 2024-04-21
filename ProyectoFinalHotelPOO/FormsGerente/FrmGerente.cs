@@ -554,5 +554,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 e.Handled = true;
             }
         }
+
+        private void txtApellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbHoteles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

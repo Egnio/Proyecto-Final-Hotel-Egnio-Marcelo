@@ -149,5 +149,10 @@ namespace ProyectoFinalHotelPOO.Forms
                 txtContraseña.UseSystemPasswordChar = true;
             }
         }
+
+        private void FrmNuevoUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

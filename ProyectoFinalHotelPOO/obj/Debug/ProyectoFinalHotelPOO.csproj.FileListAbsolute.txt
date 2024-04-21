@@ -24,3 +24,17 @@ C:\Users\marcelor\Documents\ProyectosCS\ProyectoFinalHotelPOO - Copy\ProyectoFin
 C:\Users\marcelor\Documents\ProyectosCS\ProyectoFinalHotelPOO - Copy\ProyectoFinalHotelPOO\bin\Debug\ProyectoFinalHotelPOO.pdb
 C:\Users\marcelor\Documents\ProyectosCS\ProyectoFinalHotelPOO - Copy\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.Forms.FrmNuevoUsuario.resources
 C:\Users\marcelor\Documents\ProyectosCS\ProyectoFinalHotelPOO\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.Forms.FrmNuevoUsuario.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\bin\Debug\ProyectoFinalHotelPOO.exe.config
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\bin\Debug\ProyectoFinalHotelPOO.exe
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\bin\Debug\ProyectoFinalHotelPOO.pdb
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FormsCliente.FrmCliente.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FormsCliente.FrmGerente.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FrmLogin.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.Forms.FrmNuevoUsuario.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.Properties.Resources.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.exe
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.pdb
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FormsCliente.FrmBuscar.resources

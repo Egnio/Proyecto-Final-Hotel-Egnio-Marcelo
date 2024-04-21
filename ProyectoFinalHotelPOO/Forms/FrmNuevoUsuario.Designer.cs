@@ -157,6 +157,7 @@
             this.Name = "FrmNuevoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNuevoUsuario";
+            this.Load += new System.EventHandler(this.FrmNuevoUsuario_Load);
             this.GbRegistrar.ResumeLayout(false);
             this.GbRegistrar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogin)).EndInit();
