@@ -67,6 +67,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(589, 180);
             this.dgvClientes.TabIndex = 44;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // pnlUsuario
             // 
@@ -312,6 +313,7 @@
             this.Controls.Add(this.dgvClientes);
             this.Name = "FrmBuscar";
             this.Text = "FrmBuscar";
+            this.Load += new System.EventHandler(this.FrmBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.pnlUsuario.ResumeLayout(false);
             this.pnlUsuario.PerformLayout();

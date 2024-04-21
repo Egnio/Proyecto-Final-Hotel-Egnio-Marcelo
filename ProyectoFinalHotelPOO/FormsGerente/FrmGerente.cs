@@ -334,7 +334,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 e.Handled = true;
             }
 
-            //Se habilita la funcion enter entre apellidos y numero telofonico
+            //Se habilita la funcion enter entre apellidos y numero telefonico
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if(txtApellidos.Text == "")

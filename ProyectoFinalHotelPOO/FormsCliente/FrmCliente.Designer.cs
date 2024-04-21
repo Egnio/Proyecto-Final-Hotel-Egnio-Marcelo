@@ -160,7 +160,7 @@
             this.BtnHistorial.Name = "BtnHistorial";
             this.BtnHistorial.Size = new System.Drawing.Size(175, 57);
             this.BtnHistorial.TabIndex = 8;
-            this.BtnHistorial.Text = "Historial";
+            this.BtnHistorial.Text = "Eliminar Reserva";
             this.BtnHistorial.UseVisualStyleBackColor = true;
             this.BtnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
             // 

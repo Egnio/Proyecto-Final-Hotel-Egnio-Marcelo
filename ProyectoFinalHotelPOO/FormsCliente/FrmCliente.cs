@@ -48,6 +48,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         {
             BtnCancelar.Enabled = false;
             BtnNuevaReservacion.Enabled = true;
+         
 
             //Se declaran las variables para calcular el total del hotel
             double habitaciones = 0, tdias = 0, adultos = 0, niños = 0, total = 0;
@@ -181,10 +182,10 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 MessageBox.Show("Error al registrar reserva, intente de nuevo.");
             }
         }
+        
+        }
 
-    }
-
-    private void txtCódigoDeCliente_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCódigoDeCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
@@ -208,6 +209,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
 
         }
+        
 
         private void cmbAdultos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -523,7 +525,24 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            {
+                //Se muestra los datos en el data grid view
+                DataGridViewRow fila = dgvClientes.Rows[e.RowIndex];
+                txtCodigoDeCliente.Text = Convert.ToString(fila.Cells[0].Value);
+                txtNombre.Text = Convert.ToString(fila.Cells[1].Value);
+                txtApellidos.Text = Convert.ToString(fila.Cells[2].Value);
+                txtNumeroTelefonico.Text = Convert.ToString(fila.Cells[3].Value);
+                txtCorreoElectronico.Text = Convert.ToString(fila.Cells[4].Value);
+                txtDireccion.Text = Convert.ToString(fila.Cells[5].Value);
+                cmbHoteles.Text = Convert.ToString(fila.Cells[6].Value);
+                cmbHabitaciones.Text = Convert.ToString(fila.Cells[7].Value);
+                cmbTipoHabitacion.Text = Convert.ToString(fila.Cells[8].Value);
+                cmbAdultos.Text = Convert.ToString(fila.Cells[9].Value);
+                cmbNiños.Text = Convert.ToString(fila.Cells[10].Value);
+                dtpEntrada.Text = Convert.ToString(fila.Cells[11].Value);
+                dtpSalida.Text = Convert.ToString(fila.Cells[12].Value);
+                txtTotal.Text = Convert.ToString(fila.Cells[13].Value);
+            }
         }
     }
 }
