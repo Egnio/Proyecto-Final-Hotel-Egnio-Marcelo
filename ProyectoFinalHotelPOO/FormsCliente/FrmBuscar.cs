@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinalHotelPOO.FormsGerente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,25 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             InitializeComponent();
         }
 
+        Clientes_Gerente sql = new Clientes_Gerente();
+
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
 
+            if (MessageBox.Show("¿Desea cancelar la reserva? Eliminará todos los datos en el proceso", "Sistema de Planilla",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                string query = "delete from Hoteles where Código = @Código";
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@Código", txtCodigoDeCliente.Text);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Registro de cliente eliminado.");
+                dgvClientes.DataSource = sql.mostrarDatos();
+
+            }
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,7 +47,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         //Se connecta con la base de datos
         //Recordar cambiarlo 
-        private SqlConnection conexion = new SqlConnection("Data Source = localhost; initial catalog = HotelClientes; integrated security = true");
+        private SqlConnection conexion = new SqlConnection("Data Source = LAPTOP-HGB0OD39\\SQLEXPRESS; initial catalog = HotelClientes; integrated security = true");
 
         private DataSet ds;
         public DataTable mostrarDatos()
@@ -51,6 +68,13 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

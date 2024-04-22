@@ -32,24 +32,36 @@
             this.pnlUsuario = new System.Windows.Forms.Panel();
             this.lblClienteNombre = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblHotel = new System.Windows.Forms.Label();
+            this.cmbHoteles = new System.Windows.Forms.ComboBox();
             this.pnlCliente = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnHistorial = new System.Windows.Forms.Button();
-            this.BtnNuevaReservacion = new System.Windows.Forms.Button();
-            this.BtnReservar = new System.Windows.Forms.Button();
+            this.BtnSeleccionar = new System.Windows.Forms.Button();
+            this.BtnBuscar = new System.Windows.Forms.Button();
             this.lblNombreSistema = new System.Windows.Forms.Label();
-            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnReservar = new System.Windows.Forms.Button();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvHoteles = new System.Windows.Forms.DataGridView();
             this.grpHotel = new System.Windows.Forms.GroupBox();
+            this.CboServicioHabitacion = new System.Windows.Forms.ComboBox();
+            this.LblServicioHabitacion = new System.Windows.Forms.Label();
+            this.CboGimnasio = new System.Windows.Forms.ComboBox();
+            this.LblGimnasio = new System.Windows.Forms.Label();
+            this.CboPiscina = new System.Windows.Forms.ComboBox();
+            this.LblPiscina = new System.Windows.Forms.Label();
+            this.CboWIFI = new System.Windows.Forms.ComboBox();
+            this.LblServicioWIFI = new System.Windows.Forms.Label();
+            this.CboOpiniones = new System.Windows.Forms.ComboBox();
+            this.LblOpiniones = new System.Windows.Forms.Label();
+            this.CboValoracion = new System.Windows.Forms.ComboBox();
+            this.LblValoraciones = new System.Windows.Forms.Label();
             this.txtCodigoDeCliente = new System.Windows.Forms.TextBox();
             this.lblCódigoDeCliente = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.cmbHoteles = new System.Windows.Forms.ComboBox();
-            this.lblHotel = new System.Windows.Forms.Label();
             this.dtpSalida = new System.Windows.Forms.DateTimePicker();
             this.dtpEntrada = new System.Windows.Forms.DateTimePicker();
             this.lblEntrada = new System.Windows.Forms.Label();
@@ -62,32 +74,21 @@
             this.lblNiños = new System.Windows.Forms.Label();
             this.lblHabitaciones = new System.Windows.Forms.Label();
             this.lblTipoDeHabitación = new System.Windows.Forms.Label();
-            this.grpDatosPersonales = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDirección = new System.Windows.Forms.Label();
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.lblNúmeroTelefónico = new System.Windows.Forms.Label();
-            this.txtNumeroTelefonico = new System.Windows.Forms.TextBox();
-            this.lblCorreoElectrónico = new System.Windows.Forms.Label();
-            this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.pnlUsuario.SuspendLayout();
             this.pnlCliente.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoteles)).BeginInit();
             this.grpHotel.SuspendLayout();
-            this.grpDatosPersonales.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlUsuario
             // 
-            this.pnlUsuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlUsuario.BackColor = System.Drawing.Color.DarkOrange;
             this.pnlUsuario.Controls.Add(this.lblClienteNombre);
             this.pnlUsuario.Controls.Add(this.lblUsuario);
+            this.pnlUsuario.Controls.Add(this.lblHotel);
+            this.pnlUsuario.Controls.Add(this.cmbHoteles);
             this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUsuario.Location = new System.Drawing.Point(175, 75);
             this.pnlUsuario.Name = "pnlUsuario";
@@ -114,8 +115,35 @@
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             // 
+            // lblHotel
+            // 
+            this.lblHotel.AutoSize = true;
+            this.lblHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotel.Location = new System.Drawing.Point(370, 40);
+            this.lblHotel.Name = "lblHotel";
+            this.lblHotel.Size = new System.Drawing.Size(109, 13);
+            this.lblHotel.TabIndex = 27;
+            this.lblHotel.Text = "Nombre del Hotel:";
+            // 
+            // cmbHoteles
+            // 
+            this.cmbHoteles.FormattingEnabled = true;
+            this.cmbHoteles.Items.AddRange(new object[] {
+            "Hotel RDG",
+            "Hotel Nicte",
+            "Hotel Holiday Inn Convention Center",
+            "Hotel Globales Camino Real Managua",
+            "Hotel Real Intercontinental Metrocentro Managua"});
+            this.cmbHoteles.Location = new System.Drawing.Point(373, 55);
+            this.cmbHoteles.Name = "cmbHoteles";
+            this.cmbHoteles.Size = new System.Drawing.Size(312, 21);
+            this.cmbHoteles.TabIndex = 28;
+            this.cmbHoteles.SelectedIndexChanged += new System.EventHandler(this.cmbHoteles_SelectedIndexChanged);
+            this.cmbHoteles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbHoteles_KeyPress);
+            // 
             // pnlCliente
             // 
+            this.pnlCliente.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.pnlCliente.Controls.Add(this.btnCerrarSesion);
             this.pnlCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCliente.Location = new System.Drawing.Point(175, 0);
@@ -138,12 +166,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel1.Controls.Add(this.BtnHistorial);
-            this.panel1.Controls.Add(this.BtnNuevaReservacion);
-            this.panel1.Controls.Add(this.BtnReservar);
+            this.panel1.Controls.Add(this.BtnSeleccionar);
+            this.panel1.Controls.Add(this.BtnBuscar);
             this.panel1.Controls.Add(this.lblNombreSistema);
-            this.panel1.Controls.Add(this.BtnCancelar);
+            this.panel1.Controls.Add(this.BtnReservar);
             this.panel1.Controls.Add(this.btnAcercaDe);
             this.panel1.Controls.Add(this.picLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -156,37 +184,37 @@
             // 
             this.BtnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHistorial.Location = new System.Drawing.Point(0, 325);
+            this.BtnHistorial.Location = new System.Drawing.Point(0, 270);
             this.BtnHistorial.Name = "BtnHistorial";
             this.BtnHistorial.Size = new System.Drawing.Size(175, 57);
             this.BtnHistorial.TabIndex = 8;
-            this.BtnHistorial.Text = "Eliminar Reserva";
+            this.BtnHistorial.Text = "Deseleccionar";
             this.BtnHistorial.UseVisualStyleBackColor = true;
             this.BtnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
             // 
-            // BtnNuevaReservacion
+            // BtnSeleccionar
             // 
-            this.BtnNuevaReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevaReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevaReservacion.Location = new System.Drawing.Point(0, 269);
-            this.BtnNuevaReservacion.Name = "BtnNuevaReservacion";
-            this.BtnNuevaReservacion.Size = new System.Drawing.Size(175, 57);
-            this.BtnNuevaReservacion.TabIndex = 7;
-            this.BtnNuevaReservacion.Text = "Nueva Reservación";
-            this.BtnNuevaReservacion.UseVisualStyleBackColor = true;
-            this.BtnNuevaReservacion.Click += new System.EventHandler(this.BtnNuevaReservacion_Click);
+            this.BtnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSeleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSeleccionar.Location = new System.Drawing.Point(0, 218);
+            this.BtnSeleccionar.Name = "BtnSeleccionar";
+            this.BtnSeleccionar.Size = new System.Drawing.Size(175, 57);
+            this.BtnSeleccionar.TabIndex = 7;
+            this.BtnSeleccionar.Text = "Seleccionar";
+            this.BtnSeleccionar.UseVisualStyleBackColor = true;
+            this.BtnSeleccionar.Click += new System.EventHandler(this.BtnNuevaReservacion_Click);
             // 
-            // BtnReservar
+            // BtnBuscar
             // 
-            this.BtnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReservar.Location = new System.Drawing.Point(0, 162);
-            this.BtnReservar.Name = "BtnReservar";
-            this.BtnReservar.Size = new System.Drawing.Size(175, 57);
-            this.BtnReservar.TabIndex = 6;
-            this.BtnReservar.Text = "Reservar";
-            this.BtnReservar.UseVisualStyleBackColor = true;
-            this.BtnReservar.Click += new System.EventHandler(this.button1_Click);
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.Location = new System.Drawing.Point(0, 162);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(175, 57);
+            this.BtnBuscar.TabIndex = 6;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblNombreSistema
             // 
@@ -198,17 +226,17 @@
             this.lblNombreSistema.TabIndex = 5;
             this.lblNombreSistema.Text = "Reserva de Hoteles\r\n        Managua\r\n";
             // 
-            // BtnCancelar
+            // BtnReservar
             // 
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(0, 218);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(175, 57);
-            this.BtnCancelar.TabIndex = 1;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
-            this.BtnCancelar.Click += new System.EventHandler(this.btnReservar_Click);
+            this.BtnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReservar.Location = new System.Drawing.Point(0, 325);
+            this.BtnReservar.Name = "BtnReservar";
+            this.BtnReservar.Size = new System.Drawing.Size(175, 57);
+            this.BtnReservar.TabIndex = 1;
+            this.BtnReservar.Text = "Reservar";
+            this.BtnReservar.UseVisualStyleBackColor = true;
+            this.BtnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // btnAcercaDe
             // 
@@ -232,24 +260,34 @@
             this.picLogo.TabIndex = 4;
             this.picLogo.TabStop = false;
             // 
-            // dgvClientes
+            // dgvHoteles
             // 
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(288, 476);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(743, 150);
-            this.dgvClientes.TabIndex = 30;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvHoteles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoteles.Location = new System.Drawing.Point(288, 476);
+            this.dgvHoteles.Name = "dgvHoteles";
+            this.dgvHoteles.Size = new System.Drawing.Size(743, 150);
+            this.dgvHoteles.TabIndex = 30;
+            this.dgvHoteles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // grpHotel
             // 
-            this.grpHotel.BackColor = System.Drawing.Color.PowderBlue;
+            this.grpHotel.BackColor = System.Drawing.Color.Transparent;
+            this.grpHotel.Controls.Add(this.CboServicioHabitacion);
+            this.grpHotel.Controls.Add(this.LblServicioHabitacion);
+            this.grpHotel.Controls.Add(this.CboGimnasio);
+            this.grpHotel.Controls.Add(this.LblGimnasio);
+            this.grpHotel.Controls.Add(this.CboPiscina);
+            this.grpHotel.Controls.Add(this.LblPiscina);
+            this.grpHotel.Controls.Add(this.CboWIFI);
+            this.grpHotel.Controls.Add(this.LblServicioWIFI);
+            this.grpHotel.Controls.Add(this.CboOpiniones);
+            this.grpHotel.Controls.Add(this.LblOpiniones);
+            this.grpHotel.Controls.Add(this.CboValoracion);
+            this.grpHotel.Controls.Add(this.LblValoraciones);
             this.grpHotel.Controls.Add(this.txtCodigoDeCliente);
             this.grpHotel.Controls.Add(this.lblCódigoDeCliente);
             this.grpHotel.Controls.Add(this.lblTotal);
             this.grpHotel.Controls.Add(this.txtTotal);
-            this.grpHotel.Controls.Add(this.cmbHoteles);
-            this.grpHotel.Controls.Add(this.lblHotel);
             this.grpHotel.Controls.Add(this.dtpSalida);
             this.grpHotel.Controls.Add(this.dtpEntrada);
             this.grpHotel.Controls.Add(this.lblEntrada);
@@ -263,19 +301,151 @@
             this.grpHotel.Controls.Add(this.lblHabitaciones);
             this.grpHotel.Controls.Add(this.lblTipoDeHabitación);
             this.grpHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpHotel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.grpHotel.Location = new System.Drawing.Point(605, 177);
+            this.grpHotel.ForeColor = System.Drawing.SystemColors.Window;
+            this.grpHotel.Location = new System.Drawing.Point(221, 177);
             this.grpHotel.Name = "grpHotel";
-            this.grpHotel.Size = new System.Drawing.Size(544, 281);
+            this.grpHotel.Size = new System.Drawing.Size(906, 282);
             this.grpHotel.TabIndex = 29;
             this.grpHotel.TabStop = false;
             this.grpHotel.Text = "Buscar Hoteles:";
+            this.grpHotel.Enter += new System.EventHandler(this.grpHotel_Enter);
+            // 
+            // CboServicioHabitacion
+            // 
+            this.CboServicioHabitacion.FormattingEnabled = true;
+            this.CboServicioHabitacion.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.CboServicioHabitacion.Location = new System.Drawing.Point(721, 126);
+            this.CboServicioHabitacion.Name = "CboServicioHabitacion";
+            this.CboServicioHabitacion.Size = new System.Drawing.Size(160, 23);
+            this.CboServicioHabitacion.TabIndex = 42;
+            // 
+            // LblServicioHabitacion
+            // 
+            this.LblServicioHabitacion.AutoSize = true;
+            this.LblServicioHabitacion.Location = new System.Drawing.Point(718, 111);
+            this.LblServicioHabitacion.Name = "LblServicioHabitacion";
+            this.LblServicioHabitacion.Size = new System.Drawing.Size(163, 15);
+            this.LblServicioHabitacion.TabIndex = 41;
+            this.LblServicioHabitacion.Text = "Servicio a la Habitación:";
+            // 
+            // CboGimnasio
+            // 
+            this.CboGimnasio.FormattingEnabled = true;
+            this.CboGimnasio.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.CboGimnasio.Location = new System.Drawing.Point(721, 55);
+            this.CboGimnasio.Name = "CboGimnasio";
+            this.CboGimnasio.Size = new System.Drawing.Size(160, 23);
+            this.CboGimnasio.TabIndex = 40;
+            // 
+            // LblGimnasio
+            // 
+            this.LblGimnasio.AutoSize = true;
+            this.LblGimnasio.BackColor = System.Drawing.Color.Transparent;
+            this.LblGimnasio.ForeColor = System.Drawing.SystemColors.Window;
+            this.LblGimnasio.Location = new System.Drawing.Point(718, 40);
+            this.LblGimnasio.Name = "LblGimnasio";
+            this.LblGimnasio.Size = new System.Drawing.Size(72, 15);
+            this.LblGimnasio.TabIndex = 39;
+            this.LblGimnasio.Text = "Gimnasio:";
+            // 
+            // CboPiscina
+            // 
+            this.CboPiscina.FormattingEnabled = true;
+            this.CboPiscina.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.CboPiscina.Location = new System.Drawing.Point(555, 126);
+            this.CboPiscina.Name = "CboPiscina";
+            this.CboPiscina.Size = new System.Drawing.Size(131, 23);
+            this.CboPiscina.TabIndex = 38;
+            this.CboPiscina.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // LblPiscina
+            // 
+            this.LblPiscina.AutoSize = true;
+            this.LblPiscina.Location = new System.Drawing.Point(552, 112);
+            this.LblPiscina.Name = "LblPiscina";
+            this.LblPiscina.Size = new System.Drawing.Size(58, 15);
+            this.LblPiscina.TabIndex = 37;
+            this.LblPiscina.Text = "Piscina:";
+            this.LblPiscina.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // CboWIFI
+            // 
+            this.CboWIFI.FormattingEnabled = true;
+            this.CboWIFI.Items.AddRange(new object[] {
+            "Sí",
+            "No"});
+            this.CboWIFI.Location = new System.Drawing.Point(555, 55);
+            this.CboWIFI.Name = "CboWIFI";
+            this.CboWIFI.Size = new System.Drawing.Size(131, 23);
+            this.CboWIFI.TabIndex = 36;
+            this.CboWIFI.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // LblServicioWIFI
+            // 
+            this.LblServicioWIFI.AutoSize = true;
+            this.LblServicioWIFI.Location = new System.Drawing.Point(552, 40);
+            this.LblServicioWIFI.Name = "LblServicioWIFI";
+            this.LblServicioWIFI.Size = new System.Drawing.Size(94, 15);
+            this.LblServicioWIFI.TabIndex = 35;
+            this.LblServicioWIFI.Text = "Servicio WIFI:";
+            this.LblServicioWIFI.Click += new System.EventHandler(this.LblServicioWIFI_Click);
+            // 
+            // CboOpiniones
+            // 
+            this.CboOpiniones.FormattingEnabled = true;
+            this.CboOpiniones.Items.AddRange(new object[] {
+            "Bueno",
+            "Muy Bueno ",
+            "Fantástico",
+            "Fabuloso"});
+            this.CboOpiniones.Location = new System.Drawing.Point(381, 127);
+            this.CboOpiniones.Name = "CboOpiniones";
+            this.CboOpiniones.Size = new System.Drawing.Size(132, 23);
+            this.CboOpiniones.TabIndex = 34;
+            // 
+            // LblOpiniones
+            // 
+            this.LblOpiniones.AutoSize = true;
+            this.LblOpiniones.Location = new System.Drawing.Point(378, 112);
+            this.LblOpiniones.Name = "LblOpiniones";
+            this.LblOpiniones.Size = new System.Drawing.Size(76, 15);
+            this.LblOpiniones.TabIndex = 33;
+            this.LblOpiniones.Text = "Opiniones:";
+            // 
+            // CboValoracion
+            // 
+            this.CboValoracion.FormattingEnabled = true;
+            this.CboValoracion.Items.AddRange(new object[] {
+            "1 Estrella",
+            "2 Estrellas",
+            "3 Estrellas",
+            "4 Estrellas ",
+            "5 Estrellas"});
+            this.CboValoracion.Location = new System.Drawing.Point(381, 55);
+            this.CboValoracion.Name = "CboValoracion";
+            this.CboValoracion.Size = new System.Drawing.Size(132, 23);
+            this.CboValoracion.TabIndex = 32;
+            // 
+            // LblValoraciones
+            // 
+            this.LblValoraciones.AutoSize = true;
+            this.LblValoraciones.Location = new System.Drawing.Point(378, 40);
+            this.LblValoraciones.Name = "LblValoraciones";
+            this.LblValoraciones.Size = new System.Drawing.Size(79, 15);
+            this.LblValoraciones.TabIndex = 31;
+            this.LblValoraciones.Text = "Valoración:";
             // 
             // txtCodigoDeCliente
             // 
             this.txtCodigoDeCliente.Location = new System.Drawing.Point(378, 243);
             this.txtCodigoDeCliente.Name = "txtCodigoDeCliente";
-            this.txtCodigoDeCliente.Size = new System.Drawing.Size(137, 21);
+            this.txtCodigoDeCliente.Size = new System.Drawing.Size(132, 21);
             this.txtCodigoDeCliente.TabIndex = 19;
             this.txtCodigoDeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCódigoDeCliente_KeyPress);
             // 
@@ -291,7 +461,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(378, 169);
+            this.lblTotal.Location = new System.Drawing.Point(378, 168);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(55, 15);
             this.lblTotal.TabIndex = 29;
@@ -299,35 +469,11 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(381, 185);
+            this.txtTotal.Location = new System.Drawing.Point(381, 184);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(137, 21);
+            this.txtTotal.Size = new System.Drawing.Size(132, 21);
             this.txtTotal.TabIndex = 30;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
-            // 
-            // cmbHoteles
-            // 
-            this.cmbHoteles.FormattingEnabled = true;
-            this.cmbHoteles.Items.AddRange(new object[] {
-            "Hotel RDG",
-            "Hotel Nicte",
-            "Hotel Holiday Inn Convention Center",
-            "Hotel Globales Camino Real Managua",
-            "Hotel Real Intercontinental Metrocentro Managua"});
-            this.cmbHoteles.Location = new System.Drawing.Point(38, 57);
-            this.cmbHoteles.Name = "cmbHoteles";
-            this.cmbHoteles.Size = new System.Drawing.Size(312, 23);
-            this.cmbHoteles.TabIndex = 28;
-            this.cmbHoteles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbHoteles_KeyPress);
-            // 
-            // lblHotel
-            // 
-            this.lblHotel.AutoSize = true;
-            this.lblHotel.Location = new System.Drawing.Point(35, 42);
-            this.lblHotel.Name = "lblHotel";
-            this.lblHotel.Size = new System.Drawing.Size(45, 15);
-            this.lblHotel.TabIndex = 27;
-            this.lblHotel.Text = "Hotel:";
             // 
             // dtpSalida
             // 
@@ -385,7 +531,7 @@
             "3",
             "4",
             "5"});
-            this.cmbHabitaciones.Location = new System.Drawing.Point(381, 58);
+            this.cmbHabitaciones.Location = new System.Drawing.Point(38, 57);
             this.cmbHabitaciones.Name = "cmbHabitaciones";
             this.cmbHabitaciones.Size = new System.Drawing.Size(137, 23);
             this.cmbHabitaciones.TabIndex = 22;
@@ -402,7 +548,7 @@
             "3",
             "4",
             "5"});
-            this.cmbNiños.Location = new System.Drawing.Point(381, 126);
+            this.cmbNiños.Location = new System.Drawing.Point(212, 126);
             this.cmbNiños.Name = "cmbNiños";
             this.cmbNiños.Size = new System.Drawing.Size(137, 23);
             this.cmbNiños.TabIndex = 21;
@@ -418,7 +564,7 @@
             "3",
             "4",
             "5"});
-            this.cmbAdultos.Location = new System.Drawing.Point(211, 125);
+            this.cmbAdultos.Location = new System.Drawing.Point(212, 55);
             this.cmbAdultos.Name = "cmbAdultos";
             this.cmbAdultos.Size = new System.Drawing.Size(137, 23);
             this.cmbAdultos.TabIndex = 20;
@@ -428,7 +574,7 @@
             // lblAdultos
             // 
             this.lblAdultos.AutoSize = true;
-            this.lblAdultos.Location = new System.Drawing.Point(208, 110);
+            this.lblAdultos.Location = new System.Drawing.Point(209, 40);
             this.lblAdultos.Name = "lblAdultos";
             this.lblAdultos.Size = new System.Drawing.Size(58, 15);
             this.lblAdultos.TabIndex = 0;
@@ -437,7 +583,7 @@
             // lblNiños
             // 
             this.lblNiños.AutoSize = true;
-            this.lblNiños.Location = new System.Drawing.Point(378, 110);
+            this.lblNiños.Location = new System.Drawing.Point(209, 110);
             this.lblNiños.Name = "lblNiños";
             this.lblNiños.Size = new System.Drawing.Size(48, 15);
             this.lblNiños.TabIndex = 2;
@@ -446,7 +592,7 @@
             // lblHabitaciones
             // 
             this.lblHabitaciones.AutoSize = true;
-            this.lblHabitaciones.Location = new System.Drawing.Point(378, 43);
+            this.lblHabitaciones.Location = new System.Drawing.Point(35, 42);
             this.lblHabitaciones.Name = "lblHabitaciones";
             this.lblHabitaciones.Size = new System.Drawing.Size(95, 15);
             this.lblHabitaciones.TabIndex = 4;
@@ -461,130 +607,6 @@
             this.lblTipoDeHabitación.TabIndex = 6;
             this.lblTipoDeHabitación.Text = "Tipo de habitación:";
             // 
-            // grpDatosPersonales
-            // 
-            this.grpDatosPersonales.BackColor = System.Drawing.Color.PowderBlue;
-            this.grpDatosPersonales.Controls.Add(this.label1);
-            this.grpDatosPersonales.Controls.Add(this.txtNombre);
-            this.grpDatosPersonales.Controls.Add(this.txtDireccion);
-            this.grpDatosPersonales.Controls.Add(this.lblNombre);
-            this.grpDatosPersonales.Controls.Add(this.lblDirección);
-            this.grpDatosPersonales.Controls.Add(this.lblApellidos);
-            this.grpDatosPersonales.Controls.Add(this.txtApellidos);
-            this.grpDatosPersonales.Controls.Add(this.lblNúmeroTelefónico);
-            this.grpDatosPersonales.Controls.Add(this.txtNumeroTelefonico);
-            this.grpDatosPersonales.Controls.Add(this.lblCorreoElectrónico);
-            this.grpDatosPersonales.Controls.Add(this.txtCorreoElectronico);
-            this.grpDatosPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDatosPersonales.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.grpDatosPersonales.Location = new System.Drawing.Point(188, 177);
-            this.grpDatosPersonales.Name = "grpDatosPersonales";
-            this.grpDatosPersonales.Size = new System.Drawing.Size(383, 281);
-            this.grpDatosPersonales.TabIndex = 28;
-            this.grpDatosPersonales.TabStop = false;
-            this.grpDatosPersonales.Text = "Datos Personales:";
-            this.grpDatosPersonales.Enter += new System.EventHandler(this.grpDatosPersonales_Enter);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 26);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "*La siguiente información será utilizada con el fin de establecer contacto \r\nentr" +
-    "e el cliente y el hotel seleccionado y demás acciones relacionadas.\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(40, 58);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(137, 21);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(40, 117);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(312, 21);
-            this.txtDireccion.TabIndex = 17;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDirección_TextChanged);
-            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDirección_KeyPress);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(37, 42);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 15);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // lblDirección
-            // 
-            this.lblDirección.AutoSize = true;
-            this.lblDirección.Location = new System.Drawing.Point(37, 101);
-            this.lblDirección.Name = "lblDirección";
-            this.lblDirección.Size = new System.Drawing.Size(72, 15);
-            this.lblDirección.TabIndex = 16;
-            this.lblDirección.Text = "Dirección:";
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Location = new System.Drawing.Point(211, 42);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(70, 15);
-            this.lblApellidos.TabIndex = 2;
-            this.lblApellidos.Text = "Apellidos:";
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(214, 58);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(137, 21);
-            this.txtApellidos.TabIndex = 3;
-            this.txtApellidos.TextChanged += new System.EventHandler(this.txtApellidos_TextChanged);
-            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
-            // 
-            // lblNúmeroTelefónico
-            // 
-            this.lblNúmeroTelefónico.AutoSize = true;
-            this.lblNúmeroTelefónico.Location = new System.Drawing.Point(37, 175);
-            this.lblNúmeroTelefónico.Name = "lblNúmeroTelefónico";
-            this.lblNúmeroTelefónico.Size = new System.Drawing.Size(129, 15);
-            this.lblNúmeroTelefónico.TabIndex = 4;
-            this.lblNúmeroTelefónico.Text = "Número telefónico:";
-            // 
-            // txtNumeroTelefonico
-            // 
-            this.txtNumeroTelefonico.Location = new System.Drawing.Point(40, 191);
-            this.txtNumeroTelefonico.Name = "txtNumeroTelefonico";
-            this.txtNumeroTelefonico.Size = new System.Drawing.Size(137, 21);
-            this.txtNumeroTelefonico.TabIndex = 5;
-            this.txtNumeroTelefonico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNúmeroTelefónico_KeyPress);
-            // 
-            // lblCorreoElectrónico
-            // 
-            this.lblCorreoElectrónico.AutoSize = true;
-            this.lblCorreoElectrónico.Location = new System.Drawing.Point(211, 175);
-            this.lblCorreoElectrónico.Name = "lblCorreoElectrónico";
-            this.lblCorreoElectrónico.Size = new System.Drawing.Size(130, 15);
-            this.lblCorreoElectrónico.TabIndex = 6;
-            this.lblCorreoElectrónico.Text = "Correo Electrónico:";
-            // 
-            // txtCorreoElectronico
-            // 
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(214, 191);
-            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(137, 21);
-            this.txtCorreoElectronico.TabIndex = 7;
-            this.txtCorreoElectronico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreoElectrónico_KeyPress);
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,11 +615,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1157, 652);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvHoteles);
             this.Controls.Add(this.pnlUsuario);
             this.Controls.Add(this.pnlCliente);
             this.Controls.Add(this.grpHotel);
-            this.Controls.Add(this.grpDatosPersonales);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
@@ -608,11 +629,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoteles)).EndInit();
             this.grpHotel.ResumeLayout(false);
             this.grpHotel.PerformLayout();
-            this.grpDatosPersonales.ResumeLayout(false);
-            this.grpDatosPersonales.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -626,11 +645,11 @@
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNombreSistema;
-        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnReservar;
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.Button BtnReservar;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button BtnBuscar;
+        private System.Windows.Forms.DataGridView dgvHoteles;
         private System.Windows.Forms.GroupBox grpHotel;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
@@ -648,21 +667,21 @@
         private System.Windows.Forms.Label lblNiños;
         private System.Windows.Forms.Label lblHabitaciones;
         private System.Windows.Forms.Label lblTipoDeHabitación;
-        private System.Windows.Forms.GroupBox grpDatosPersonales;
         private System.Windows.Forms.TextBox txtCodigoDeCliente;
         private System.Windows.Forms.Label lblCódigoDeCliente;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblDirección;
-        private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.Label lblNúmeroTelefónico;
-        private System.Windows.Forms.TextBox txtNumeroTelefonico;
-        private System.Windows.Forms.Label lblCorreoElectrónico;
-        private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.Button BtnHistorial;
-        private System.Windows.Forms.Button BtnNuevaReservacion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnSeleccionar;
+        private System.Windows.Forms.ComboBox CboValoracion;
+        private System.Windows.Forms.Label LblValoraciones;
+        private System.Windows.Forms.ComboBox CboWIFI;
+        private System.Windows.Forms.Label LblServicioWIFI;
+        private System.Windows.Forms.ComboBox CboOpiniones;
+        private System.Windows.Forms.Label LblOpiniones;
+        private System.Windows.Forms.ComboBox CboServicioHabitacion;
+        private System.Windows.Forms.Label LblServicioHabitacion;
+        private System.Windows.Forms.ComboBox CboGimnasio;
+        private System.Windows.Forms.Label LblGimnasio;
+        private System.Windows.Forms.ComboBox CboPiscina;
+        private System.Windows.Forms.Label LblPiscina;
     }
 }

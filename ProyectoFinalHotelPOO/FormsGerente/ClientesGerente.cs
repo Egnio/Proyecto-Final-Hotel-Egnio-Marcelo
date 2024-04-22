@@ -12,7 +12,7 @@ namespace ProyectoFinalHotelPOO.FormsGerente
     {
         //Se connecta con la base de datos
         //Recordar cambiarlo 
-        private SqlConnection conexion = new SqlConnection("Data Source = localhost; initial catalog = HotelClientes; integrated security = true");
+        private SqlConnection conexion = new SqlConnection("Data Source = LAPTOP-HGB0OD39\\SQLEXPRESS; initial catalog = HotelClientes; integrated security = true");
         private DataSet ds;
 
         public DataTable mostrarDatos()

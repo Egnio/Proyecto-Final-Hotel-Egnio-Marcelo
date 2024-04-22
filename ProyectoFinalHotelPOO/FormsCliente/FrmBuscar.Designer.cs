@@ -42,7 +42,7 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.txtCódigoDeCliente = new System.Windows.Forms.TextBox();
+            this.txtCodigoDeCliente = new System.Windows.Forms.TextBox();
             this.lblCódigoDeCliente = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.lblCorreoElectrónico = new System.Windows.Forms.Label();
             this.txtCorreoElectrónico = new System.Windows.Forms.TextBox();
             this.LblIngresar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnlUsuario.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -71,7 +72,7 @@
             // 
             // pnlUsuario
             // 
-            this.pnlUsuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlUsuario.BackColor = System.Drawing.Color.DarkOrange;
             this.pnlUsuario.Controls.Add(this.lblClienteNombre);
             this.pnlUsuario.Controls.Add(this.lblUsuario);
             this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,6 +103,7 @@
             // 
             // pnlCliente
             // 
+            this.pnlCliente.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.pnlCliente.Controls.Add(this.btnCerrarSesion);
             this.pnlCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCliente.Location = new System.Drawing.Point(175, 0);
@@ -122,7 +124,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel1.Controls.Add(this.BtnNuevaReservacion);
             this.panel1.Controls.Add(this.BtnBuscar);
             this.panel1.Controls.Add(this.lblNombreSistema);
@@ -132,7 +134,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 517);
+            this.panel1.Size = new System.Drawing.Size(175, 547);
             this.panel1.TabIndex = 60;
             // 
             // BtnNuevaReservacion
@@ -201,19 +203,20 @@
             this.picLogo.TabIndex = 4;
             this.picLogo.TabStop = false;
             // 
-            // txtCódigoDeCliente
+            // txtCodigoDeCliente
             // 
-            this.txtCódigoDeCliente.Location = new System.Drawing.Point(362, 234);
-            this.txtCódigoDeCliente.Name = "txtCódigoDeCliente";
-            this.txtCódigoDeCliente.Size = new System.Drawing.Size(137, 20);
-            this.txtCódigoDeCliente.TabIndex = 64;
+            this.txtCodigoDeCliente.Location = new System.Drawing.Point(362, 234);
+            this.txtCodigoDeCliente.Name = "txtCodigoDeCliente";
+            this.txtCodigoDeCliente.Size = new System.Drawing.Size(137, 20);
+            this.txtCodigoDeCliente.TabIndex = 64;
             // 
             // lblCódigoDeCliente
             // 
             this.lblCódigoDeCliente.AutoSize = true;
+            this.lblCódigoDeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCódigoDeCliente.Location = new System.Drawing.Point(359, 218);
             this.lblCódigoDeCliente.Name = "lblCódigoDeCliente";
-            this.lblCódigoDeCliente.Size = new System.Drawing.Size(92, 13);
+            this.lblCódigoDeCliente.Size = new System.Drawing.Size(123, 15);
             this.lblCódigoDeCliente.TabIndex = 63;
             this.lblCódigoDeCliente.Text = "Código de cliente:";
             // 
@@ -227,18 +230,20 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(549, 218);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 15);
             this.lblNombre.TabIndex = 65;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidos.Location = new System.Drawing.Point(723, 218);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(52, 13);
+            this.lblApellidos.Size = new System.Drawing.Size(70, 15);
             this.lblApellidos.TabIndex = 67;
             this.lblApellidos.Text = "Apellidos:";
             // 
@@ -252,9 +257,10 @@
             // lblNúmeroTelefónico
             // 
             this.lblNúmeroTelefónico.AutoSize = true;
+            this.lblNúmeroTelefónico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNúmeroTelefónico.Location = new System.Drawing.Point(461, 272);
             this.lblNúmeroTelefónico.Name = "lblNúmeroTelefónico";
-            this.lblNúmeroTelefónico.Size = new System.Drawing.Size(96, 13);
+            this.lblNúmeroTelefónico.Size = new System.Drawing.Size(129, 15);
             this.lblNúmeroTelefónico.TabIndex = 69;
             this.lblNúmeroTelefónico.Text = "Número telefónico:";
             // 
@@ -268,9 +274,10 @@
             // lblCorreoElectrónico
             // 
             this.lblCorreoElectrónico.AutoSize = true;
+            this.lblCorreoElectrónico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreoElectrónico.Location = new System.Drawing.Point(635, 272);
             this.lblCorreoElectrónico.Name = "lblCorreoElectrónico";
-            this.lblCorreoElectrónico.Size = new System.Drawing.Size(97, 13);
+            this.lblCorreoElectrónico.Size = new System.Drawing.Size(130, 15);
             this.lblCorreoElectrónico.TabIndex = 71;
             this.lblCorreoElectrónico.Text = "Correo Electrónico:";
             // 
@@ -291,12 +298,25 @@
             this.LblIngresar.TabIndex = 73;
             this.LblIngresar.Text = "Ingrese alguno de los siguientes datos para buscar reserva:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(451, 515);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(350, 26);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "*La siguiente información será utilizada con el fin de establecer contacto \r\n  en" +
+    "tre el cliente y el hotel seleccionado y demás acciones relacionadas.\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FrmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1047, 517);
+            this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.ClientSize = new System.Drawing.Size(1047, 547);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LblIngresar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
@@ -306,7 +326,7 @@
             this.Controls.Add(this.txtNúmeroTelefónico);
             this.Controls.Add(this.lblCorreoElectrónico);
             this.Controls.Add(this.txtCorreoElectrónico);
-            this.Controls.Add(this.txtCódigoDeCliente);
+            this.Controls.Add(this.txtCodigoDeCliente);
             this.Controls.Add(this.lblCódigoDeCliente);
             this.Controls.Add(this.pnlUsuario);
             this.Controls.Add(this.pnlCliente);
@@ -341,7 +361,7 @@
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.TextBox txtCódigoDeCliente;
+        private System.Windows.Forms.TextBox txtCodigoDeCliente;
         private System.Windows.Forms.Label lblCódigoDeCliente;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -352,5 +372,6 @@
         private System.Windows.Forms.Label lblCorreoElectrónico;
         private System.Windows.Forms.TextBox txtCorreoElectrónico;
         private System.Windows.Forms.Label LblIngresar;
+        private System.Windows.Forms.Label label1;
     }
 }

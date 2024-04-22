@@ -1,10 +1,12 @@
-﻿using System;
+﻿using ProyectoFinalHotelPOO.FormsGerente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,12 +20,12 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             InitializeComponent();
 
          
-            BtnNuevaReservacion.Enabled = false;
+            BtnSeleccionar.Enabled = false;
             txtTotal.ReadOnly = true;
             txtCodigoDeCliente.ReadOnly = true;
         }
+        Clientes_Gerente sql = new Clientes_Gerente();
 
-        
         private void pnlCliente_Paint(object sender, PaintEventArgs e)
         {
 
@@ -41,16 +43,21 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-
+            string consulta = "SELECT * FROM Hoteles";
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion); 
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            dgvHoteles.DataSource = dt;
         }
 
-        private SqlConnection conexion = new SqlConnection("Data Source = localhost; initial catalog = HotelClientes; integrated security = true");
+        //Cambiar a localhost en caso el usuario no sea Egnio 
+        SqlConnection conexion = new SqlConnection("Data Source = LAPTOP-HGB0OD39\\SQLEXPRESS; initial catalog = HotelClientes; integrated security = true");
 
         private DataSet ds;
         public DataTable mostrarDatos()
         {
             conexion.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Clientes", conexion);
+            SqlCommand cmd = new SqlCommand("Select * from Hoteles", conexion);
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
             ds = new DataSet();
             ad.Fill(ds, "tabla");
@@ -59,8 +66,29 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            BtnCancelar.Enabled = false;
-            BtnNuevaReservacion.Enabled = true;
+            if(CboValoracion.Text == "" && CboWIFI.Text == "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "" )
+            {
+                string query = "Select * Hoteles";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla);
+                dgvHoteles.DataSource = tabla;
+
+           
+            }
+            else
+            {
+                string query = "Select * Hoteles where Validación = '"+ CboValoracion  +"'" + "Select * Hoteles where Opiniones = '"+ CboOpiniones +"' " + "Select * Hoteles where ServicioWIFI = '"+ CboWIFI +"' " + "Select * Hoteles where Piscina = '" + CboPiscina + "' " + "Select * Hoteles where Gimnasio = '" + CboGimnasio + "' " + "Select * Hoteles where ServicioHabitación = '" + CboServicioHabitacion + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Aqui hay un error a la hora que dar al boton buscar, necesito analizar cual es esa excepción
+                dgvHoteles.DataSource = tabla;
+            }
+
+            BtnReservar.Enabled = false;
+            BtnSeleccionar.Enabled = true;
             
           
             //Se declaran las variables para calcular el total del hotel
@@ -183,18 +211,6 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             //Se bloquea la casilla del total
             txtTotal.ReadOnly = true;
 
-            //Se guardan los datos ingresados por el usuario
-            txtCodigoDeCliente.Text = dgvClientes.Rows.Count.ToString();
-            if (sql.insertar(txtCodigoDeCliente.Text, txtNombre.Text, txtApellidos.Text, txtNumeroTelefonico.Text, txtCorreoElectronico.Text, txtDireccion.Text, cmbHoteles.Text, cmbHabitaciones.Text, cmbTipoHabitacion.Text, cmbAdultos.Text, cmbNiños.Text, dtpEntrada.Text, dtpSalida.Text, txtTotal.Text))
-            {
-                MessageBox.Show("¡La reserva se ha completado con éxito!");
-                dgvClientes.DataSource = sql.mostrarDatos();
-            }
-            else
-            {
-                MessageBox.Show("Error al registrar reserva, intente de nuevo.");
-            }
-       
         }
 
         private void txtCódigoDeCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -205,20 +221,6 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         //btnCancelar_Click
         private void btnReservar_Click(object sender, EventArgs e)
         {
-
-
-            if (MessageBox.Show("¿Desea cancelar la reserva? Eliminará todos los datos en el proceso", "Sistema de Planilla",
-           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                string query = "delete from Clientes where Código = @Código";
-                conexion.Open();
-                SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("@Código", txtCodigoDeCliente.Text);
-                comando.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Registro de cliente eliminado.");
-                dgvClientes.DataSource = sql.mostrarDatos();
-            }
 
         }
         
@@ -319,155 +321,6 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
         }
 
-        private void txtDirección_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se habilita la funcion enter entre direccion y hoteles
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtDireccion.Text == "")
-                {
-                    //Se valida que el usario no deje la casilla en blanco
-                    MessageBox.Show("Por favor ingrese su dirección.", "Requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Handled = false;
-                }
-                else
-                {
-                    cmbHoteles.Focus();
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void txtCorreoElectrónico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se habilita la funcion enter entre correo electronico y direccion
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtCorreoElectronico.Text == "")
-                {
-                    //Se valida que el usario no deje la casilla en blanco
-                    MessageBox.Show("Por favor ingrese su correo electrónico.", "Requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Handled = false;
-                }
-                else
-                {
-                    txtDireccion.Focus();
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void txtNúmeroTelefónico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se valida que el usuario solo puede ingresar numeros
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-
-            //Se habilita la funcion enter entre numero telefonico y correo electronico
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtNumeroTelefonico.Text == "")
-                {
-                    //Se valida que el usario no deje la casilla en blanco
-                    MessageBox.Show("Por favor ingrese su número telefónico.", "Requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Handled = false;
-                }
-                else
-                {
-                    txtCorreoElectronico.Focus();
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se valida que el usuario solo pueda ingresar letras
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-
-            //Se habilita la funcion enter entre apellidos y numero telofonico
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtApellidos.Text == "")
-                {
-                    //Se valida que el usario no deje la casilla en blanco
-                    MessageBox.Show("Por favor ingrese sus apellidos.", "Requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Handled = false;
-                }
-                else
-                {
-                    txtNumeroTelefonico.Focus();
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se valida que el usuario solo puede ingresar letras
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-
-            //Se habilita la funcion enter entre nombre y apellidos
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtNombre.Text == "")
-                {
-                    //Se valida que el usario no deje la casilla en blanco
-                    MessageBox.Show("Por favor ingrese su nombre.", "Requerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    e.Handled = false;
-                }
-                else
-                {
-                    txtApellidos.Focus();
-                    e.Handled = true;
-                }
-            }
-
-        }
 
         private void grpDatosPersonales_Enter(object sender, EventArgs e)
         {
@@ -512,20 +365,8 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         private void BtnNuevaReservacion_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            txtApellidos.Text = "";
-            txtDireccion.Text = "";
-            txtNumeroTelefonico.Text = "";
-            txtCorreoElectronico.Text = "";
-            cmbHoteles.Text = "";
-            cmbHabitaciones.Text = "";
-            cmbTipoHabitacion.Text = "";
-            dtpEntrada.Value = DateTime.Now;
-            dtpSalida.Value = DateTime.Now;
-            cmbAdultos.Text = "";
-            cmbNiños.Text = "";
-            txtTotal.Text = "";
-            txtCodigoDeCliente.Text = "";
+           
+
         }
 
         private void BtnHistorial_Click(object sender, EventArgs e)
@@ -539,25 +380,42 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         {
             {
                 //Se muestra los datos en el data grid view
-                DataGridViewRow fila = dgvClientes.Rows[e.RowIndex];
-                txtCodigoDeCliente.Text = Convert.ToString(fila.Cells[0].Value);
-                txtNombre.Text = Convert.ToString(fila.Cells[1].Value);
-                txtApellidos.Text = Convert.ToString(fila.Cells[2].Value);
-                txtNumeroTelefonico.Text = Convert.ToString(fila.Cells[3].Value);
-                txtCorreoElectronico.Text = Convert.ToString(fila.Cells[4].Value);
-                txtDireccion.Text = Convert.ToString(fila.Cells[5].Value);
-                cmbHoteles.Text = Convert.ToString(fila.Cells[6].Value);
-                cmbHabitaciones.Text = Convert.ToString(fila.Cells[7].Value);
-                cmbTipoHabitacion.Text = Convert.ToString(fila.Cells[8].Value);
-                cmbAdultos.Text = Convert.ToString(fila.Cells[9].Value);
-                cmbNiños.Text = Convert.ToString(fila.Cells[10].Value);
-                dtpEntrada.Text = Convert.ToString(fila.Cells[11].Value);
-                dtpSalida.Text = Convert.ToString(fila.Cells[12].Value);
-                txtTotal.Text = Convert.ToString(fila.Cells[13].Value);
+                DataGridViewRow fila = dgvHoteles.Rows[e.RowIndex];
+
             }
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbHoteles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblServicioWIFI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpHotel_Enter(object sender, EventArgs e)
         {
 
         }

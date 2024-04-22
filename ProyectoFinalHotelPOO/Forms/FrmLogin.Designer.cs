@@ -33,6 +33,7 @@
             this.pbrLogin = new System.Windows.Forms.ProgressBar();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.GbIngresar = new System.Windows.Forms.GroupBox();
+            this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.cB_Mostrar = new System.Windows.Forms.CheckBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pBLogin = new System.Windows.Forms.PictureBox();
             this.tmrLogin = new System.Windows.Forms.Timer(this.components);
-            this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.GbIngresar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogin)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,16 @@
             this.GbIngresar.TabIndex = 8;
             this.GbIngresar.TabStop = false;
             this.GbIngresar.Text = "Ingresar";
+            // 
+            // lblCrearCuenta
+            // 
+            this.lblCrearCuenta.AutoSize = true;
+            this.lblCrearCuenta.Location = new System.Drawing.Point(117, 242);
+            this.lblCrearCuenta.Name = "lblCrearCuenta";
+            this.lblCrearCuenta.Size = new System.Drawing.Size(91, 15);
+            this.lblCrearCuenta.TabIndex = 6;
+            this.lblCrearCuenta.Text = "Crear Cuenta";
+            this.lblCrearCuenta.Click += new System.EventHandler(this.lblCrearCuenta_Click);
             // 
             // cB_Mostrar
             // 
@@ -162,16 +172,6 @@
             // 
             this.tmrLogin.Tick += new System.EventHandler(this.tmrLogin_Tick);
             // 
-            // lblCrearCuenta
-            // 
-            this.lblCrearCuenta.AutoSize = true;
-            this.lblCrearCuenta.Location = new System.Drawing.Point(117, 242);
-            this.lblCrearCuenta.Name = "lblCrearCuenta";
-            this.lblCrearCuenta.Size = new System.Drawing.Size(91, 15);
-            this.lblCrearCuenta.TabIndex = 6;
-            this.lblCrearCuenta.Text = "Crear Cuenta";
-            this.lblCrearCuenta.Click += new System.EventHandler(this.lblCrearCuenta_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +185,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.GbIngresar.ResumeLayout(false);
             this.GbIngresar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogin)).EndInit();

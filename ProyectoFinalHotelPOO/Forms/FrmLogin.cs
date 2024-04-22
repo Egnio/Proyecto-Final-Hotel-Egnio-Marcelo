@@ -21,7 +21,7 @@ namespace ProyectoFinalHotelPOO
         }
 
         //Se conecta a la base de datos HotelClientes
-        SqlConnection conexion = new SqlConnection("Data Source = localhost; initial catalog = HotelClientes; integrated security = true");
+        SqlConnection conexion = new SqlConnection("Data Source = LAPTOP-HGB0OD39\\SQLEXPRESS; initial catalog = HotelClientes; integrated security = true");
         private void tmrLogin_Tick(object sender, EventArgs e)
         {
             //Se declara la barra de progreso
@@ -36,7 +36,16 @@ namespace ProyectoFinalHotelPOO
                     frm.Show();
                     this.Hide();
                     tmrLogin.Enabled = false;
+                    btnIngresar.Enabled = false;
                     
+                }
+                else if (txtUsuario.Text == "Marcelo" && txtContraseña.Text == "12345")
+                {
+                    FrmCliente frm = new FrmCliente();
+                    frm.Show();
+                    this.Hide();
+                    tmrLogin.Enabled = false;
+                    btnIngresar.Enabled = false;
                 }
 
                 //Se busca el usuario en la base de datos
@@ -93,6 +102,11 @@ namespace ProyectoFinalHotelPOO
                             tmrLogin.Enabled = true;
                             pbrLogin.Value = 0;
                         }
+                        else if (txtUsuario.Text == "Marcelo" && txtContraseña.Text == "12345")
+                        {
+                            tmrLogin.Enabled = true;
+                            pbrLogin.Value = 0;
+                        }
                         else
                         {
                             MessageBox.Show("Usuario o Contraseña incorrecta. ", "Error Mensaje.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -101,7 +115,7 @@ namespace ProyectoFinalHotelPOO
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error Iniciando Sesión: " + ex, "Erro Mensaje.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error Iniciando Sesión: " + ex, "Error Mensaje.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -191,6 +205,11 @@ namespace ProyectoFinalHotelPOO
             FrmNuevoUsuario frm = new FrmNuevoUsuario();
             frm.Show();
             this.Hide();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
