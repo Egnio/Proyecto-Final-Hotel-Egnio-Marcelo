@@ -220,6 +220,7 @@
             this.btnAcercaDe.TabIndex = 2;
             this.btnAcercaDe.Text = "Acerca de";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // picLogo
             // 

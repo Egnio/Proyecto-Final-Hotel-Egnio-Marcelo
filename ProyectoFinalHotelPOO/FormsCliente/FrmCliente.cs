@@ -44,12 +44,25 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         }
 
+        private SqlConnection conexion = new SqlConnection("Data Source = localhost; initial catalog = HotelClientes; integrated security = true");
+
+        private DataSet ds;
+        public DataTable mostrarDatos()
+        {
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Clientes", conexion);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            ad.Fill(ds, "tabla");
+            conexion.Close();
+            return ds.Tables["tabla"];
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             BtnCancelar.Enabled = false;
             BtnNuevaReservacion.Enabled = true;
-         
-
+            
+          
             //Se declaran las variables para calcular el total del hotel
             double habitaciones = 0, tdias = 0, adultos = 0, niños = 0, total = 0;
 
@@ -70,15 +83,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             //Se calcula el total del hotel
             if (cmbHoteles.Text == "Hotel RDG")
             {
-                if (cmbTpoHabitación.Text == "Individual")
+                if (cmbTipoHabitacion.Text == "Individual")
                 {
                     total = ((60 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Doble")
+                else if (cmbTipoHabitacion.Text == "Doble")
                 {
                     total = ((80 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Matrimonial")
+                else if (cmbTipoHabitacion.Text == "Matrimonial")
                 {
                     total = ((90 * habitaciones) + (adultos * 20) + (niños * 10)) * tdias;
                 }
@@ -89,15 +102,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
             else if (cmbHoteles.Text == "Hotel Nicte")
             {
-                if (cmbTpoHabitación.Text == "Individual")
+                if (cmbTipoHabitacion.Text == "Individual")
                 {
                     total = ((70 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Doble")
+                else if (cmbTipoHabitacion.Text == "Doble")
                 {
                     total = ((90 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Matrimonial")
+                else if (cmbTipoHabitacion.Text == "Matrimonial")
                 {
                     total = ((100 * habitaciones) + (adultos * 25) + (niños * 15)) * tdias;
                 }
@@ -108,15 +121,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
             else if (cmbHoteles.Text == "Hotel Holiday Inn Convention Center")
             {
-                if (cmbTpoHabitación.Text == "Individual")
+                if (cmbTipoHabitacion.Text == "Individual")
                 {
                     total = ((100 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Doble")
+                else if (cmbTipoHabitacion.Text == "Doble")
                 {
                     total = ((120 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Matrimonial")
+                else if (cmbTipoHabitacion.Text == "Matrimonial")
                 {
                     total = ((130 * habitaciones) + (adultos * 40) + (niños * 25)) * tdias;
                 }
@@ -127,15 +140,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
             else if (cmbHoteles.Text == "Hotel Globales Camino Real Managua")
             {
-                if (cmbTpoHabitación.Text == "Individual")
+                if (cmbTipoHabitacion.Text == "Individual")
                 {
                     total = ((110 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Doble")
+                else if (cmbTipoHabitacion.Text == "Doble")
                 {
                     total = ((130 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Matrimonial")
+                else if (cmbTipoHabitacion.Text == "Matrimonial")
                 {
                     total = ((140 * habitaciones) + (adultos * 45) + (niños * 30)) * tdias;
                 }
@@ -146,15 +159,15 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
             else
             {
-                if (cmbTpoHabitación.Text == "Individual")
+                if (cmbTipoHabitacion.Text == "Individual")
                 {
                     total = ((240 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Doble")
+                else if (cmbTipoHabitacion.Text == "Doble")
                 {
                     total = ((260 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
                 }
-                else if (cmbTpoHabitación.Text == "Matrimonial")
+                else if (cmbTipoHabitacion.Text == "Matrimonial")
                 {
                     total = ((270 * habitaciones) + (adultos * 60) + (niños * 40)) * tdias;
                 }
@@ -172,7 +185,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
             //Se guardan los datos ingresados por el usuario
             txtCodigoDeCliente.Text = dgvClientes.Rows.Count.ToString();
-            if (sql.insertar(txtCodigoDeCliente.Text, txtNombre.Text, txtApellidos.Text, txtNúmeroTelefónico.Text, txtCorreoElectrónico.Text, txtDirección.Text, cmbHoteles.Text, cmbHabitaciones.Text, cmbTpoHabitación.Text, cmbAdultos.Text, cmbNiños.Text, dtpEntrada.Text, dtpSalida.Text, txtTotal.Text))
+            if (sql.insertar(txtCodigoDeCliente.Text, txtNombre.Text, txtApellidos.Text, txtNumeroTelefonico.Text, txtCorreoElectronico.Text, txtDireccion.Text, cmbHoteles.Text, cmbHabitaciones.Text, cmbTipoHabitacion.Text, cmbAdultos.Text, cmbNiños.Text, dtpEntrada.Text, dtpSalida.Text, txtTotal.Text))
             {
                 MessageBox.Show("¡La reserva se ha completado con éxito!");
                 dgvClientes.DataSource = sql.mostrarDatos();
@@ -181,8 +194,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             {
                 MessageBox.Show("Error al registrar reserva, intente de nuevo.");
             }
-        }
-        
+       
         }
 
         private void txtCódigoDeCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -201,7 +213,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 string query = "delete from Clientes where Código = @Código";
                 conexion.Open();
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("@Código", txtCódigoDeCliente.Text);
+                comando.Parameters.AddWithValue("@Código", txtCodigoDeCliente.Text);
                 comando.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Registro de cliente eliminado.");
@@ -543,6 +555,11 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 dtpSalida.Text = Convert.ToString(fila.Cells[12].Value);
                 txtTotal.Text = Convert.ToString(fila.Cells[13].Value);
             }
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

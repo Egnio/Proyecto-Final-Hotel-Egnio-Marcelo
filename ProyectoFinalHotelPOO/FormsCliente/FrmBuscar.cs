@@ -49,6 +49,11 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             //Se muestran los datos en el data grid view
             dgvClientes.DataSource = mostrarDatos();
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

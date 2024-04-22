@@ -156,6 +156,7 @@
             this.BtnBuscar.TabIndex = 6;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // lblNombreSistema
             // 
