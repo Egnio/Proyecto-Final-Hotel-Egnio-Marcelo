@@ -456,6 +456,7 @@
             this.txtCódigoDeCliente.Name = "txtCódigoDeCliente";
             this.txtCódigoDeCliente.Size = new System.Drawing.Size(137, 21);
             this.txtCódigoDeCliente.TabIndex = 19;
+            this.txtCódigoDeCliente.TextChanged += new System.EventHandler(this.txtCódigoDeCliente_TextChanged);
             this.txtCódigoDeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCódigoDeCliente_KeyPress);
             // 
             // lblCódigoDeCliente

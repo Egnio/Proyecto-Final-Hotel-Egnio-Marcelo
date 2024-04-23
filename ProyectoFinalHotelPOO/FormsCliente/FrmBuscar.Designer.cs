@@ -42,18 +42,23 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.txtCodigoDeCliente = new System.Windows.Forms.TextBox();
-            this.lblCódigoDeCliente = new System.Windows.Forms.Label();
+            this.TxtHotel = new System.Windows.Forms.TextBox();
+            this.LblHotel = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.lblNúmeroTelefónico = new System.Windows.Forms.Label();
-            this.txtNúmeroTelefónico = new System.Windows.Forms.TextBox();
+            this.LblTotal = new System.Windows.Forms.Label();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
             this.lblCorreoElectrónico = new System.Windows.Forms.Label();
             this.txtCorreoElectrónico = new System.Windows.Forms.TextBox();
             this.LblIngresar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnEnviar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.pnlUsuario.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -121,10 +126,12 @@
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.panel1.Controls.Add(this.BtnEnviar);
             this.panel1.Controls.Add(this.BtnNuevaReservacion);
             this.panel1.Controls.Add(this.BtnBuscar);
             this.panel1.Controls.Add(this.lblNombreSistema);
@@ -141,18 +148,19 @@
             // 
             this.BtnNuevaReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNuevaReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevaReservacion.Location = new System.Drawing.Point(0, 269);
+            this.BtnNuevaReservacion.Location = new System.Drawing.Point(0, 325);
             this.BtnNuevaReservacion.Name = "BtnNuevaReservacion";
             this.BtnNuevaReservacion.Size = new System.Drawing.Size(175, 57);
             this.BtnNuevaReservacion.TabIndex = 7;
             this.BtnNuevaReservacion.Text = "Regresar";
             this.BtnNuevaReservacion.UseVisualStyleBackColor = true;
+            this.BtnNuevaReservacion.Click += new System.EventHandler(this.BtnNuevaReservacion_Click);
             // 
             // BtnBuscar
             // 
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(0, 162);
+            this.BtnBuscar.Location = new System.Drawing.Point(0, 218);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(175, 57);
             this.BtnBuscar.TabIndex = 6;
@@ -174,7 +182,7 @@
             // 
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.Location = new System.Drawing.Point(0, 218);
+            this.BtnEliminar.Location = new System.Drawing.Point(0, 274);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(175, 57);
             this.BtnEliminar.TabIndex = 1;
@@ -203,22 +211,22 @@
             this.picLogo.TabIndex = 4;
             this.picLogo.TabStop = false;
             // 
-            // txtCodigoDeCliente
+            // TxtHotel
             // 
-            this.txtCodigoDeCliente.Location = new System.Drawing.Point(362, 234);
-            this.txtCodigoDeCliente.Name = "txtCodigoDeCliente";
-            this.txtCodigoDeCliente.Size = new System.Drawing.Size(137, 20);
-            this.txtCodigoDeCliente.TabIndex = 64;
+            this.TxtHotel.Location = new System.Drawing.Point(196, 234);
+            this.TxtHotel.Name = "TxtHotel";
+            this.TxtHotel.Size = new System.Drawing.Size(137, 20);
+            this.TxtHotel.TabIndex = 64;
             // 
-            // lblCódigoDeCliente
+            // LblHotel
             // 
-            this.lblCódigoDeCliente.AutoSize = true;
-            this.lblCódigoDeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCódigoDeCliente.Location = new System.Drawing.Point(359, 218);
-            this.lblCódigoDeCliente.Name = "lblCódigoDeCliente";
-            this.lblCódigoDeCliente.Size = new System.Drawing.Size(123, 15);
-            this.lblCódigoDeCliente.TabIndex = 63;
-            this.lblCódigoDeCliente.Text = "Código de cliente:";
+            this.LblHotel.AutoSize = true;
+            this.LblHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHotel.Location = new System.Drawing.Point(193, 218);
+            this.LblHotel.Name = "LblHotel";
+            this.LblHotel.Size = new System.Drawing.Size(45, 15);
+            this.LblHotel.TabIndex = 63;
+            this.LblHotel.Text = "Hotel:";
             // 
             // txtNombre
             // 
@@ -254,22 +262,22 @@
             this.txtApellidos.Size = new System.Drawing.Size(137, 20);
             this.txtApellidos.TabIndex = 68;
             // 
-            // lblNúmeroTelefónico
+            // LblTotal
             // 
-            this.lblNúmeroTelefónico.AutoSize = true;
-            this.lblNúmeroTelefónico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNúmeroTelefónico.Location = new System.Drawing.Point(461, 272);
-            this.lblNúmeroTelefónico.Name = "lblNúmeroTelefónico";
-            this.lblNúmeroTelefónico.Size = new System.Drawing.Size(129, 15);
-            this.lblNúmeroTelefónico.TabIndex = 69;
-            this.lblNúmeroTelefónico.Text = "Número telefónico:";
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.Location = new System.Drawing.Point(193, 260);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(43, 15);
+            this.LblTotal.TabIndex = 69;
+            this.LblTotal.Text = "Total:";
             // 
-            // txtNúmeroTelefónico
+            // TxtTotal
             // 
-            this.txtNúmeroTelefónico.Location = new System.Drawing.Point(464, 288);
-            this.txtNúmeroTelefónico.Name = "txtNúmeroTelefónico";
-            this.txtNúmeroTelefónico.Size = new System.Drawing.Size(137, 20);
-            this.txtNúmeroTelefónico.TabIndex = 70;
+            this.TxtTotal.Location = new System.Drawing.Point(196, 276);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(137, 20);
+            this.TxtTotal.TabIndex = 70;
             // 
             // lblCorreoElectrónico
             // 
@@ -310,30 +318,80 @@
     "tre el cliente y el hotel seleccionado y demás acciones relacionadas.\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // BtnEnviar
+            // 
+            this.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEnviar.Location = new System.Drawing.Point(0, 162);
+            this.BtnEnviar.Name = "BtnEnviar";
+            this.BtnEnviar.Size = new System.Drawing.Size(175, 57);
+            this.BtnEnviar.TabIndex = 8;
+            this.BtnEnviar.Text = "Enviar";
+            this.BtnEnviar.UseVisualStyleBackColor = true;
+            this.BtnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(480, 272);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 15);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Número telefónico:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(483, 288);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 20);
+            this.textBox1.TabIndex = 78;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(381, 234);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(137, 20);
+            this.textBox2.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(378, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 15);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Código de cliente:";
+            // 
             // FrmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(1047, 547);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblIngresar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.lblNúmeroTelefónico);
-            this.Controls.Add(this.txtNúmeroTelefónico);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.lblCorreoElectrónico);
             this.Controls.Add(this.txtCorreoElectrónico);
-            this.Controls.Add(this.txtCodigoDeCliente);
-            this.Controls.Add(this.lblCódigoDeCliente);
+            this.Controls.Add(this.TxtHotel);
+            this.Controls.Add(this.LblHotel);
             this.Controls.Add(this.pnlUsuario);
             this.Controls.Add(this.pnlCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvClientes);
             this.Name = "FrmBuscar";
-            this.Text = "FrmBuscar";
+            this.Text = "Reservación";
             this.Load += new System.EventHandler(this.FrmBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.pnlUsuario.ResumeLayout(false);
@@ -361,17 +419,22 @@
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.TextBox txtCodigoDeCliente;
-        private System.Windows.Forms.Label lblCódigoDeCliente;
+        private System.Windows.Forms.TextBox TxtHotel;
+        private System.Windows.Forms.Label LblHotel;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.Label lblNúmeroTelefónico;
-        private System.Windows.Forms.TextBox txtNúmeroTelefónico;
+        private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.TextBox TxtTotal;
         private System.Windows.Forms.Label lblCorreoElectrónico;
         private System.Windows.Forms.TextBox txtCorreoElectrónico;
         private System.Windows.Forms.Label LblIngresar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnEnviar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

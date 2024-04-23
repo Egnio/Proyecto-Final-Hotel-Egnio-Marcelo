@@ -31,7 +31,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
                 string query = "delete from Hoteles where Código = @Código";
                 conexion.Open();
                 SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.AddWithValue("@Código", txtCodigoDeCliente.Text);
+                comando.Parameters.AddWithValue("@Código", TxtHotel.Text);
                 comando.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Registro de cliente eliminado.");
@@ -77,6 +77,29 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnNuevaReservacion_Click(object sender, EventArgs e)
+        {
+            FrmCliente frm = new FrmCliente();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            //Cerrando sesión de gerente
+            if (MessageBox.Show(" ¿Desea cerrar su sesión? Recuerde verificar si envío su reserva.", "Reserva de Hoteles Managua", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmLogin frm = new FrmLogin();
+                frm.Show();
+                this.Close();
+            }
+        }
+
+        private void BtnEnviar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("¡Reserva registrada éxitosamente!");
         }
     }
 }

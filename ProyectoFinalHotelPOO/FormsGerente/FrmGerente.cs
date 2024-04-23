@@ -564,5 +564,10 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         {
 
         }
+
+        private void txtCódigoDeCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

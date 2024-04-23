@@ -122,6 +122,9 @@ namespace ProyectoFinalHotelPOO
                     conexion.Close();
                 }
             }
+            //Bloquea el botón ingresar una vez se ha iniciado sesión
+            btnIngresar.Enabled = false;
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
