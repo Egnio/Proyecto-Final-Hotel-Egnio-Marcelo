@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormsCliente\AcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCliente\AcercaDe.Designer.cs">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsCliente\FrmBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="FormsCliente\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsCliente\VerHoteles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsCliente\VerHoteles.Designer.cs">
+      <DependentUpon>VerHoteles.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsGerente\ClientesGerente.cs" />
     <Compile Include="FormsGerente\FrmGerente.cs">
@@ -79,11 +91,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsCliente\AcercaDe.resx">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\FrmBuscar.resx">
       <DependentUpon>FrmBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsCliente\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsCliente\VerHoteles.resx">
+      <DependentUpon>VerHoteles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsGerente\FrmGerente.resx">
       <DependentUpon>FrmGerente.cs</DependentUpon>

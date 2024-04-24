@@ -569,5 +569,12 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         {
 
         }
+
+        private void BtnHoteles_Click(object sender, EventArgs e)
+        {
+            VerHoteles frm = new VerHoteles();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

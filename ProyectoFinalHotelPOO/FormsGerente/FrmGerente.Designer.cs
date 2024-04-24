@@ -73,6 +73,7 @@
             this.lblCorreoElectrónico = new System.Windows.Forms.Label();
             this.txtCorreoElectrónico = new System.Windows.Forms.TextBox();
             this.pnlGerente = new System.Windows.Forms.Panel();
+            this.BtnHoteles = new System.Windows.Forms.Button();
             this.pnlUsuario.SuspendLayout();
             this.pnlBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -127,6 +128,7 @@
             // pnlBotones
             // 
             this.pnlBotones.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlBotones.Controls.Add(this.BtnHoteles);
             this.pnlBotones.Controls.Add(this.btnEliminar);
             this.pnlBotones.Controls.Add(this.btnBuscar);
             this.pnlBotones.Controls.Add(this.btnEditar);
@@ -145,7 +147,7 @@
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(0, 368);
+            this.btnEliminar.Location = new System.Drawing.Point(0, 426);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(175, 57);
             this.btnEliminar.TabIndex = 10;
@@ -169,7 +171,7 @@
             // 
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(0, 318);
+            this.btnEditar.Location = new System.Drawing.Point(0, 376);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(175, 57);
             this.btnEditar.TabIndex = 8;
@@ -181,7 +183,7 @@
             // 
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(0, 268);
+            this.btnLimpiar.Location = new System.Drawing.Point(0, 326);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(175, 57);
             this.btnLimpiar.TabIndex = 7;
@@ -193,7 +195,7 @@
             // 
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(0, 214);
+            this.btnRegistrar.Location = new System.Drawing.Point(0, 272);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(175, 57);
             this.btnRegistrar.TabIndex = 6;
@@ -278,9 +280,9 @@
             this.cmbHoteles.Items.AddRange(new object[] {
             "Hotel RDG",
             "Hotel Nicte",
-            "Hotel Holiday Inn Convention Center",
-            "Hotel Globales Camino Real Managua",
-            "Hotel Real Intercontinental Metrocentro Managua"});
+            "Hotel Holiday Inn",
+            "Hotel Globales Camino Real",
+            "Hotel Real Intercontinental"});
             this.cmbHoteles.Location = new System.Drawing.Point(38, 57);
             this.cmbHoteles.Name = "cmbHoteles";
             this.cmbHoteles.Size = new System.Drawing.Size(312, 23);
@@ -323,6 +325,7 @@
             // 
             // cmbTpoHabitación
             // 
+            this.cmbTpoHabitación.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTpoHabitación.FormattingEnabled = true;
             this.cmbTpoHabitación.Items.AddRange(new object[] {
             "Individual",
@@ -346,6 +349,7 @@
             // 
             // cmbHabitaciones
             // 
+            this.cmbHabitaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHabitaciones.FormattingEnabled = true;
             this.cmbHabitaciones.Items.AddRange(new object[] {
             "0",
@@ -362,6 +366,7 @@
             // 
             // cmbNiños
             // 
+            this.cmbNiños.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNiños.FormattingEnabled = true;
             this.cmbNiños.Items.AddRange(new object[] {
             "0",
@@ -378,6 +383,7 @@
             // 
             // cmbAdultos
             // 
+            this.cmbAdultos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAdultos.FormattingEnabled = true;
             this.cmbAdultos.Items.AddRange(new object[] {
             "0",
@@ -562,6 +568,18 @@
             this.pnlGerente.Size = new System.Drawing.Size(1048, 75);
             this.pnlGerente.TabIndex = 10;
             // 
+            // BtnHoteles
+            // 
+            this.BtnHoteles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnHoteles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHoteles.Location = new System.Drawing.Point(0, 216);
+            this.BtnHoteles.Name = "BtnHoteles";
+            this.BtnHoteles.Size = new System.Drawing.Size(175, 57);
+            this.BtnHoteles.TabIndex = 11;
+            this.BtnHoteles.Text = "Hoteles";
+            this.BtnHoteles.UseVisualStyleBackColor = true;
+            this.BtnHoteles.Click += new System.EventHandler(this.BtnHoteles_Click);
+            // 
             // FrmGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -576,7 +594,7 @@
             this.Controls.Add(this.pnlBotones);
             this.Name = "FrmGerente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmGerente";
+            this.Text = "Registro Gerente";
             this.Load += new System.EventHandler(this.FrmGerente_Load);
             this.pnlUsuario.ResumeLayout(false);
             this.pnlUsuario.PerformLayout();
@@ -638,5 +656,6 @@
         private System.Windows.Forms.Label lblHotel;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button BtnHoteles;
     }
 }

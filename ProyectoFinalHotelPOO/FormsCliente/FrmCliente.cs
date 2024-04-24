@@ -22,7 +22,6 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
          
             txtTotal.ReadOnly = true;
-            txtCodigoDelHotel.ReadOnly = true;
             BtnReservar.Enabled = false;
             BtnDeseleccionar.Enabled = false;
             /*
@@ -106,6 +105,7 @@ namespace ProyectoFinalHotelPOO.FormsCliente
         //btnCancelar_Click
         private void btnReservar_Click(object sender, EventArgs e)
         {
+
             if (TxtHoteles.Text == "" && txtTotal.Text == "") 
             {
                 MessageBox.Show("Por favor seleccione un hotel, rellene el formulario Seleccionar y luego presione el botón Seleccionar.");
@@ -113,9 +113,17 @@ namespace ProyectoFinalHotelPOO.FormsCliente
             }
             else
             {
-               
-                FrmBuscar frm = new FrmBuscar();
-                frm.Show();
+                FrmBuscar FHPP = new FrmBuscar();
+                AddOwnedForm(FHPP);
+                FHPP.TxtHotel.Text = this.TxtHoteles.Text;
+                FHPP.TxtTotal.Text = this.txtTotal.Text;
+                FHPP.TxtHabitaciones.Text = this.cmbHabitaciones.Text;
+                FHPP.TxtTipoHabitaciones.Text = this.cmbTipoHabitacion.Text;
+                FHPP.TxtAdultos.Text = this.cmbAdultos.Text;
+                FHPP.TxtNiños.Text = this.cmbNiños.Text;
+                FHPP.TxtEntrada.Text = this.dtpEntrada.Text;
+                FHPP.TxtSalida.Text = this.dtpSalida.Text;
+                FHPP.Show();
                 this.Hide();
             }
         }
@@ -507,7 +515,9 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
-
+            AcercaDe frm = new AcercaDe();
+            frm.Show();
+            this.Hide();
         }
 
         private void cmbHoteles_SelectedIndexChanged(object sender, EventArgs e)

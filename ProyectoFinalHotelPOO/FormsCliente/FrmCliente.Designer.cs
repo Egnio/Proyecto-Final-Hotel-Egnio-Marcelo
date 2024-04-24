@@ -58,8 +58,6 @@
             this.LblOpiniones = new System.Windows.Forms.Label();
             this.CboValoracion = new System.Windows.Forms.ComboBox();
             this.LblValoraciones = new System.Windows.Forms.Label();
-            this.txtCodigoDelHotel = new System.Windows.Forms.TextBox();
-            this.lblCódigoDeCliente = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dtpSalida = new System.Windows.Forms.DateTimePicker();
@@ -422,23 +420,6 @@
             this.LblValoraciones.TabIndex = 31;
             this.LblValoraciones.Text = "Valoración:";
             // 
-            // txtCodigoDelHotel
-            // 
-            this.txtCodigoDelHotel.Location = new System.Drawing.Point(358, 116);
-            this.txtCodigoDelHotel.Name = "txtCodigoDelHotel";
-            this.txtCodigoDelHotel.Size = new System.Drawing.Size(132, 21);
-            this.txtCodigoDelHotel.TabIndex = 19;
-            this.txtCodigoDelHotel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCódigoDeCliente_KeyPress);
-            // 
-            // lblCódigoDeCliente
-            // 
-            this.lblCódigoDeCliente.AutoSize = true;
-            this.lblCódigoDeCliente.Location = new System.Drawing.Point(358, 98);
-            this.lblCódigoDeCliente.Name = "lblCódigoDeCliente";
-            this.lblCódigoDeCliente.Size = new System.Drawing.Size(118, 15);
-            this.lblCódigoDeCliente.TabIndex = 18;
-            this.lblCódigoDeCliente.Text = "Código del Hotel:";
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -609,8 +590,6 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.lblTotal);
-            this.groupBox1.Controls.Add(this.lblCódigoDeCliente);
-            this.groupBox1.Controls.Add(this.txtCodigoDelHotel);
             this.groupBox1.Controls.Add(this.lblHabitaciones);
             this.groupBox1.Controls.Add(this.dtpEntrada);
             this.groupBox1.Controls.Add(this.lblNiños);
@@ -694,8 +673,6 @@
         private System.Windows.Forms.Label lblNiños;
         private System.Windows.Forms.Label lblHabitaciones;
         private System.Windows.Forms.Label lblTipoDeHabitación;
-        private System.Windows.Forms.TextBox txtCodigoDelHotel;
-        private System.Windows.Forms.Label lblCódigoDeCliente;
         private System.Windows.Forms.Button BtnDeseleccionar;
         private System.Windows.Forms.Button BtnSeleccionar;
         private System.Windows.Forms.ComboBox CboValoracion;

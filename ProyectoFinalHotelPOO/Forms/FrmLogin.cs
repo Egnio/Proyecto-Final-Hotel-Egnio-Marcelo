@@ -214,5 +214,10 @@ namespace ProyectoFinalHotelPOO
         {
 
         }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

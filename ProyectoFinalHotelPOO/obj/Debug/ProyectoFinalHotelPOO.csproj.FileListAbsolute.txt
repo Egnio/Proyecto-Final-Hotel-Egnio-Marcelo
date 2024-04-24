@@ -38,3 +38,4 @@ C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPO
 C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.exe
 C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.pdb
 C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FormsCliente.FrmBuscar.resources
+C:\Users\HP\Desktop\Proyecto-Final-Hotel-Egnio-Marcelo-main\ProyectoFinalHotelPOO\obj\Debug\ProyectoFinalHotelPOO.FormsCliente.VerHoteles.resources

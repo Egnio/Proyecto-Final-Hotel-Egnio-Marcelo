@@ -33,7 +33,6 @@
             this.pbrLogin = new System.Windows.Forms.ProgressBar();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.GbIngresar = new System.Windows.Forms.GroupBox();
-            this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.cB_Mostrar = new System.Windows.Forms.CheckBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@
             // GbIngresar
             // 
             this.GbIngresar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.GbIngresar.Controls.Add(this.lblCrearCuenta);
             this.GbIngresar.Controls.Add(this.cB_Mostrar);
             this.GbIngresar.Controls.Add(this.btnSalir);
             this.GbIngresar.Controls.Add(this.btnIngresar);
@@ -81,16 +79,6 @@
             this.GbIngresar.TabIndex = 8;
             this.GbIngresar.TabStop = false;
             this.GbIngresar.Text = "Ingresar";
-            // 
-            // lblCrearCuenta
-            // 
-            this.lblCrearCuenta.AutoSize = true;
-            this.lblCrearCuenta.Location = new System.Drawing.Point(117, 242);
-            this.lblCrearCuenta.Name = "lblCrearCuenta";
-            this.lblCrearCuenta.Size = new System.Drawing.Size(91, 15);
-            this.lblCrearCuenta.TabIndex = 6;
-            this.lblCrearCuenta.Text = "Crear Cuenta";
-            this.lblCrearCuenta.Click += new System.EventHandler(this.lblCrearCuenta_Click);
             // 
             // cB_Mostrar
             // 
@@ -130,6 +118,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(181, 21);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtUsuario
@@ -207,7 +196,6 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pBLogin;
         private System.Windows.Forms.Timer tmrLogin;
-        private System.Windows.Forms.Label lblCrearCuenta;
     }
 }
 
