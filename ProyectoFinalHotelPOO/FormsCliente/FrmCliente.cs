@@ -83,6 +83,105 @@ namespace ProyectoFinalHotelPOO.FormsCliente
 
            
             }
+            else if (CboValoracion.Text != "" && CboWIFI.Text == "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Valoración = '" + CboValoracion.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text != "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text == "" && CboPiscina.Text != "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text == "" && CboPiscina.Text == "" && CboGimnasio.Text != "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Gimnasio = '" + CboGimnasio.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text == "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text != "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where ServicioHabitación = '" + CboServicioHabitacion.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text == "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text != "")
+            {
+                string query = "Select * from Hoteles where Opiniones = '" + CboOpiniones.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text != "" && CboWIFI.Text != "" && CboPiscina.Text == "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Valoración = '" + CboValoracion.Text + "' " + "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text != "" && CboWIFI.Text != "" && CboPiscina.Text != "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Valoración = '" + CboValoracion.Text + "' " + "Select * from Hoteles where Opiniones = '" + CboOpiniones.Text + "' " + "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' " + "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' " + "Select * from Hoteles where Gimnasio = '" + CboGimnasio.Text + "' " + "Select * from Hoteles where ServicioHabitación = '" + CboServicioHabitacion.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text != "" && CboWIFI.Text != "" && CboPiscina.Text != "" && CboGimnasio.Text != "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Valoración = '" + CboValoracion.Text + "' " + "Select * from Hoteles where Opiniones = '" + CboOpiniones.Text + "' " + "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' " + "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' " + "Select * from Hoteles where Gimnasio = '" + CboGimnasio.Text + "' " + "Select * from Hoteles where ServicioHabitación = '" + CboServicioHabitacion.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text != "" && CboWIFI.Text != "" && CboPiscina.Text != "" && CboGimnasio.Text != "" && CboServicioHabitacion.Text != "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where Valoración = '" + CboValoracion.Text + "' " + "Select * from Hoteles where Opiniones = '" + CboOpiniones.Text + "' " + "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' " + "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' " + "Select * from Hoteles where Gimnasio = '" + CboGimnasio.Text + "' " + "Select * from Hoteles where ServicioHabitación = '" + CboServicioHabitacion.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
+            else if (CboValoracion.Text == "" && CboWIFI.Text != "" && CboPiscina.Text != "" && CboGimnasio.Text == "" && CboServicioHabitacion.Text == "" && CboOpiniones.Text == "")
+            {
+                string query = "Select * from Hoteles where ServicioWIFI = '" + CboWIFI.Text + "' " + "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter data = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla); //Error solucionado!!
+                dgvHoteles.DataSource = tabla;
+            }
             else
             {
                 string query = "Select * from Hoteles where Valoración = '"+ CboValoracion.Text +"' " + "Select * from Hoteles where Opiniones = '"+ CboOpiniones.Text +"' " + "Select * from Hoteles where ServicioWIFI = '"+ CboWIFI.Text +"' " + "Select * from Hoteles where Piscina = '" + CboPiscina.Text + "' " + "Select * from Hoteles where Gimnasio = '" + CboGimnasio.Text + "' " + "Select * from Hoteles where ServicioHabitación = '" + CboServicioHabitacion.Text +"' ";
